@@ -1,0 +1,281 @@
+/* Загальні стилі */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0d0d0d;
+    color: white;
+    text-align: center;
+}
+
+/* Header - Оновлений */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 60px;
+    background-color: rgba(0,0,0,0.9);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 26px;
+    letter-spacing: 2px;
+    margin-right: 50px; /* Відступ логотипу від навігації */
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Збільшена відстань між пунктами меню */
+}
+
+.nav a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.nav a:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Випадаюче меню */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 240px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+    z-index: 1;
+    border-radius: 8px;
+    top: 35px;
+    left: -20px;
+    text-align: left;
+    padding: 10px 0;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.4s ease;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-content a {
+    color: #222;
+    padding: 12px 20px;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+    color: black;
+    transform: none;
+}
+
+.red-link { color: #ff3b3b !important; }
+
+/* Кнопки та іконки в хедері */
+.header-right { gap: 25px; }
+
+.btn-tariffs {
+    background: transparent;
+    border: 1px solid #555;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-tariffs:hover {
+    background: white;
+    color: black;
+}
+
+.login-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Головний блок */
+.container { padding: 80px 20px; }
+
+.main-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #999;
+    font-size: 18px;
+    margin-bottom: 60px;
+}
+
+/* Картки */
+.cards-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Дозволяє карткам ставати в стовпчик */
+}
+
+.card {
+    width: 360px; /* Фіксована ширина */
+    padding: 50px 35px;
+    border-radius: 24px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.card-light { background: linear-gradient(180deg, #3a3821 0%, #1a1910 100%); }
+.card-optimum { background: linear-gradient(180deg, #3d251a 0%, #1f120d 100%); }
+.card-max { background: linear-gradient(180deg, #1a332f 0%, #0d1a18 100%); border: 1px solid #28d0c0; }
+
+.badge {
+    position: absolute;
+    top: 20px;
+    right: -10px;
+    background: #28d0c0;
+    color: #000;
+    padding: 6px 15px;
+    font-size: 11px;
+    font-weight: bold;
+    transform: rotate(15deg);
+    border-radius: 4px;
+}
+
+.card h3 { font-size: 26px; margin-bottom: 25px; min-height: 60px; line-height: 1.2; }
+.card-desc { color: #bbb; font-size: 15px; margin-bottom: 40px; min-height: 45px; line-height: 1.4; }
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 25px;
+}
+
+.btn-connect {
+    width: 100%;
+    padding: 16px;
+    border-radius: 10px;
+    border: none;
+    background: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 25px;
+    transition: 0.3s ease;
+}
+
+.btn-connect:hover {
+    background: #f0f0f0;
+    transform: scale(1.02);
+}
+
+.price { font-size: 18px; margin-bottom: 5px; }
+.price span { font-size: 34px; font-weight: bold; }
+.old-price { text-decoration: line-through; color: #666; font-size: 16px; margin-bottom: 15px; }
+.trial { color: #888; font-size: 14px; }
+
+.details-link {
+    display: inline-block;
+    margin-top: 50px;
+    color: #999;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
+.details-link:hover { color: white; }
+
+/* Реєстрація */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.auth-form {
+    background: #1a1a1a;
+    padding: 50px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+}
+
+.auth-form h2 { margin-bottom: 35px; font-size: 28px; }
+.auth-form input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #0d0d0d;
+    color: white;
+    font-size: 16px;
+}
+
+.btn-secondary {
+    width: 100%;
+    background: transparent;
+    color: white;
+    border: 1px solid #444;
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover { border-color: white; }
+
+/* Адаптивність: картки в стовпчик при зменшенні екрану */
+@media (max-width: 1200px) {
+    .nav { gap: 20px; }
+    .header { padding: 20px 30px; }
+}
+
+@media (max-width: 1100px) {
+    .cards-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card { width: 90%; max-width: 400px; }
+}
